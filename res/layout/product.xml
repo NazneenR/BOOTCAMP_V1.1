@@ -2,7 +2,7 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="75dp"
-              android:background="#ade0ff" android:id="@+id/issue_item"
+              android:background="#ade0ff" android:id="@+id/item"
               android:focusableInTouchMode="false" android:paddingTop="2dp" android:paddingBottom="2dp"
               android:baselineAligned="true">
 
