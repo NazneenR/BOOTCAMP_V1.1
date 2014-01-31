@@ -2,7 +2,11 @@ package com.example.BOOTCAMP_1_1V;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.example.Model.Product;
 import com.example.Repository.ProductRepository;
 
@@ -26,4 +30,11 @@ public class ShoppingApplication extends ListActivity {
                 android.R.layout.simple_list_item_1, products);
         setListAdapter(adapter);
     }
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		super.onListItemClick(l, v, position, id);
+		Toast.makeText(getApplicationContext(), ((TextView) v).getText().toString(), Toast.LENGTH_SHORT).show();
+	}
 }
