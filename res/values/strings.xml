@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BOOTCAMP_1.1V</string>
+  <string name="title">title</string>
+  <string name="description">description</string>
+  <string name="imagePath">imagePath</string>
 </resources>
