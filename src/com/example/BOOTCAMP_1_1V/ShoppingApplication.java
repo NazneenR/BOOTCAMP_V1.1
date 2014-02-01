@@ -29,10 +29,10 @@ public class ShoppingApplication extends Activity {
 					public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
 						Product product = (Product) adapterView.getAdapter().getItem(position);
-						Intent intent = new Intent(getApplicationContext(),ProductDetails.class);
+						Intent intent = new Intent(getApplicationContext(),ProductDetailsActivity.class);
 								intent.putExtra(getString(R.string.title), product.getTitle());
 								intent.putExtra(getString(R.string.description), product.getDescription());
-								intent.putExtra(getString(R.string.imagePath), getApplication().getResources().getString(product.getDrawable()));
+								intent.putExtra(getString(R.string.imagePath), product.getDrawable());
 								startActivity(intent);
 							}
 						});
