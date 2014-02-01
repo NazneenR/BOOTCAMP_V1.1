@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import bootcamp_1_1V.android.adapters1.ShoppingItemsListAdapter;
 
-import com.bootcamp_1_1V.BOOTCAMP_1_1V.R;
+import bootcamp_1_1V.android.R;
+import bootcamp_1_1V.android.adapters.ShoppingItemsListAdapter;
 
-import bootcamp_1_1V.android.models1.Product;
+
+import bootcamp_1_1V.android.models.Product;
 
 public class ShoppingActivity extends Activity {
     /**
@@ -21,7 +22,7 @@ public class ShoppingActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(com.bootcamp_1_1V.BOOTCAMP_1_1V.R.layout.main);
+        setContentView(R.layout.main);
         final GridView gridView = (GridView) findViewById(R.id.grid_view);
 				gridView.setLongClickable(true);
 
