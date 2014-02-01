@@ -3,7 +3,7 @@ package com.example.BOOTCAMP_1_1V;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.GridView;
-import com.example.Adapters.ImageAdapter;
+import com.example.Adapters.ShoppingItemsListAdapter;
 
 public class ShoppingApplication extends Activity {
     /**
@@ -17,6 +17,6 @@ public class ShoppingApplication extends Activity {
         setContentView(com.example.BOOTCAMP_1_1V.R.layout.main);
         final GridView gridView = (GridView) findViewById(R.id.grid_view);
 
-        gridView.setAdapter(new ImageAdapter(this));
+        gridView.setAdapter(new ShoppingItemsListAdapter(this));
     }
 }
