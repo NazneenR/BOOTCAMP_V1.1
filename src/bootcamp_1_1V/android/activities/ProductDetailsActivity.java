@@ -1,14 +1,13 @@
-package com.example.BOOTCAMP_1_1V;
+package bootcamp_1_1V.android.activities;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.File;
+import com.bootcamp_1_1V.BOOTCAMP_1_1V.R;
 
 public class ProductDetailsActivity extends Activity {
 

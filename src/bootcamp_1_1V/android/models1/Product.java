@@ -1,4 +1,4 @@
-package com.example.Model;
+package bootcamp_1_1V.android.models1;
 
 public class Product {
 

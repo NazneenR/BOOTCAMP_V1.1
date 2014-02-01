@@ -1,4 +1,4 @@
-package com.example.Adapters;
+package bootcamp_1_1V.android.adapters1;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.example.BOOTCAMP_1_1V.R;
-import com.example.Model.Product;
-import com.example.Repository.ProductRepository;
+import com.bootcamp_1_1V.BOOTCAMP_1_1V.R;
+import bootcamp_1_1V.android.models1.Product;
+import bootcamp_1_1V.android.repositories1.ProductRepository;
 import java.util.ArrayList;
 import java.util.List;
 

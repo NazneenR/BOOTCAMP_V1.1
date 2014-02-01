@@ -1,7 +1,7 @@
-package com.example.Repository;
+package bootcamp_1_1V.android.repositories1;
 
-import com.example.BOOTCAMP_1_1V.R;
-import com.example.Model.Product;
+import com.bootcamp_1_1V.BOOTCAMP_1_1V.R;
+import bootcamp_1_1V.android.models1.Product;
 
 import java.util.ArrayList;
 import java.util.List;
