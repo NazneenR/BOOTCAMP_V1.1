@@ -12,7 +12,6 @@ public class Product {
         this.drawable = drawable;
     }
 
-
     public String getDescription() {
         return description;
     }
@@ -24,7 +23,6 @@ public class Product {
     public int getDrawable() {
         return drawable;
     }
-
 
     @Override
     public String toString() {
