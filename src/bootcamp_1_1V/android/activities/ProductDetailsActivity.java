@@ -6,8 +6,11 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import bootcamp_1_1V.android.R;
+import bootcamp_1_1V.android.constants.Constants;
 
-import com.bootcamp_1_1V.BOOTCAMP_1_1V.R;
+import static bootcamp_1_1V.android.constants.Constants.*;
+
 
 public class ProductDetailsActivity extends Activity {
 
@@ -16,13 +19,13 @@ public class ProductDetailsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.product_details);
 		Bundle extras = getIntent().getExtras();
-		String title = extras.getString(getString(R.string.title));
-		String description = extras.getString(getString(R.string.description));
-		int image = extras.getInt(getString(R.string.imagePath));
+		String title = extras.getString(TITLE_KEY);
+		String description = extras.getString(DESCRIPTION_KEY);
+		int drawableResourceId = extras.getInt(DRAWABLE_KEY);
 		TextView imageTitle = (TextView) findViewById(R.id.product_title);
 		imageTitle.setText(title);
 		ImageView imageView = (ImageView) findViewById(R.id.product_image);
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), image);
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), drawableResourceId);
         imageView.setImageBitmap(bitmap);
 		TextView issueDescription = (TextView) findViewById(R.id.product_description);
 		issueDescription.setText(description);
