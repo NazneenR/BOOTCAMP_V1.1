@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
+import java.util.ArrayList;
+
 import bootcamp_1_1V.android.R;
 import bootcamp_1_1V.android.adapters.ShoppingItemsListAdapter;
 import bootcamp_1_1V.android.models.Product;
+import bootcamp_1_1V.android.repositories.ProductRepository;
 
 import static bootcamp_1_1V.android.constants.Constants.DESCRIPTION_KEY;
 import static bootcamp_1_1V.android.constants.Constants.IMAGE_URL_KEY;
@@ -25,8 +29,10 @@ public class ShoppingActivity extends Activity {
 
         setContentView(R.layout.main);
         final GridView gridView = (GridView) findViewById(R.id.grid_view);
+		ProductRepository productRepository = new ProductRepository();
+		ArrayList<Product> products = productRepository.getProducts();
 
-        gridView.setAdapter(new ShoppingItemsListAdapter(this));
+        gridView.setAdapter(new ShoppingItemsListAdapter(this, products));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

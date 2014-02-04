@@ -21,10 +21,9 @@ public class ShoppingItemsListAdapter extends BaseAdapter {
     private final Context context;
     public List<Product> products = new ArrayList<Product>();
 
-    public ShoppingItemsListAdapter(Context context){
+    public ShoppingItemsListAdapter(Context context, ArrayList<Product> products){
         this.context = context;
-        ProductRepository productRepository = new ProductRepository();
-        products = productRepository.getProducts();
+		this.products = products;
     }
 
     @Override

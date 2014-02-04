@@ -10,11 +10,11 @@ import java.util.List;
 import bootcamp_1_1V.android.models.Product;
 
 public class ProductsParser {
-	public List<Product> parseProducts(String strJSONData){
+	public ArrayList<Product> parseProducts(String strJSONData){
 		try {
 			JSONArray productInfo = null;
 			productInfo = new JSONArray(strJSONData);
-			List<Product> products = new ArrayList<Product>();
+			ArrayList<Product> products = new ArrayList<Product>();
 
 			for (int index = 0; index < productInfo.length(); index++) {
 				JSONObject x = new JSONObject(productInfo.getString(index));
