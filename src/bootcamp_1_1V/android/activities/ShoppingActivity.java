@@ -11,7 +11,7 @@ import bootcamp_1_1V.android.adapters.ShoppingItemsListAdapter;
 import bootcamp_1_1V.android.models.Product;
 
 import static bootcamp_1_1V.android.constants.Constants.DESCRIPTION_KEY;
-import static bootcamp_1_1V.android.constants.Constants.DRAWABLE_KEY;
+import static bootcamp_1_1V.android.constants.Constants.IMAGE_URL_KEY;
 import static bootcamp_1_1V.android.constants.Constants.TITLE_KEY;
 
 public class ShoppingActivity extends Activity {
@@ -36,7 +36,7 @@ public class ShoppingActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), ProductDetailsActivity.class);
                 intent.putExtra(TITLE_KEY, product.getTitle());
                 intent.putExtra(DESCRIPTION_KEY, product.getDescription());
-                intent.putExtra(DRAWABLE_KEY, product.getDrawable());
+                intent.putExtra(IMAGE_URL_KEY, product.getImageUrl());
                 startActivity(intent);
             }
         });
