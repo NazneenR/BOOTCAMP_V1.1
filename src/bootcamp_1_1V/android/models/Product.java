@@ -30,4 +30,26 @@ public class Product {
     public String toString() {
         return title;
     }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Product product = (Product) o;
+
+    if (drawable != product.drawable) return false;
+    if (!description.equals(product.description)) return false;
+    if (!title.equals(product.title)) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = drawable;
+    result = 31 * result + title.hashCode();
+    result = 31 * result + description.hashCode();
+    return result;
+  }
 }
