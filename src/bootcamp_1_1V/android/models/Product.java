@@ -1,6 +1,9 @@
 package bootcamp_1_1V.android.models;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable{
 
     private int drawable;
     private String title;
@@ -52,4 +55,32 @@ public class Product {
     result = 31 * result + description.hashCode();
     return result;
   }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeString(title);
+    dest.writeString(description);
+    dest.writeInt(drawable);
+  }
+
+  public Product(Parcel in){
+    this.title = in.readString();
+    this.description = in.readString();
+    this.drawable = in.readInt();
+  }
+
+  public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    public Product createFromParcel(Parcel in) {
+      return new Product(in);
+    }
+
+    public Product[] newArray(int size) {
+      return new Product[size];
+    }
+  };
 }

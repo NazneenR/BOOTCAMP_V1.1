@@ -26,9 +26,7 @@ public class ProductDetailsActivity extends FragmentActivity {
 		setContentView(R.layout.activity_product_details);
 
 		Bundle extras = getIntent().getExtras();
-		String title = extras.getString(getString(R.string.title));
-		String description = extras.getString(getString(R.string.description));
-		int image = extras.getInt(getString(R.string.imagePath));
+    Product parcelable = extras.getParcelable("product");
 
     products = (ArrayList<Product>) new ProductRepository().getProducts();
 
@@ -36,8 +34,7 @@ public class ProductDetailsActivity extends FragmentActivity {
     pagerAdapter = new ProductDetailsPagerAdapter(products, getSupportFragmentManager());
     viewPager.setAdapter(pagerAdapter);
 
-    Product product = new Product(title, description, image);
-    setCurrentProductInView(product);
+    setCurrentProductInView(parcelable);
 	}
 
 

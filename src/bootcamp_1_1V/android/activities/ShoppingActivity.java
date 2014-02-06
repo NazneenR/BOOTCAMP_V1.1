@@ -34,9 +34,7 @@ public class ShoppingActivity extends Activity {
 
 						Product product = (Product) adapterView.getAdapter().getItem(position);
 						Intent intent = new Intent(getApplicationContext(), ProductDetailsActivity.class);
-						intent.putExtra(getString(R.string.title), product.getTitle());
-						intent.putExtra(getString(R.string.description), product.getDescription());
-						intent.putExtra(getString(R.string.imagePath), product.getDrawable());
+            intent.putExtra("product", product);
 						startActivity(intent);
 					}
 				});
