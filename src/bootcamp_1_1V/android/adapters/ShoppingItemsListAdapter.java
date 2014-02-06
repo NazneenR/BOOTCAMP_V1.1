@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import androidplugins.Callback;
+import androidplugins.imagefetcher.ImageFetcher;
 import bootcamp_1_1V.android.R;
 import bootcamp_1_1V.android.models.Product;
 import bootcamp_1_1V.android.repositories.ProductRepository;
@@ -50,10 +52,20 @@ public class ShoppingItemsListAdapter extends BaseAdapter {
         TextView textView = (TextView) layout.findViewById(R.id.title);
         Product product = products.get(position);
         textView.setText(product.getTitle());
-        ImageDownloader imageDownloader = new ImageDownloader();
-        Bitmap bitmap = imageDownloader.downloadImage(product.getImageUrl());
-        imageView.setImageBitmap(bitmap);
+		new ImageFetcher(imageCallback(imageView), imageView.getContext()).execute(product.getImageUrl());
         return layout;
     }
+
+	private Callback<Bitmap> imageCallback(final ImageView imageView) {
+		return new Callback<Bitmap>() {
+			@Override
+			public void execute(Bitmap bitmap) {
+				if(bitmap == null) return;
+				imageView.setImageBitmap(bitmap);
+			}
+		};
+	}
+
+
 }
 
