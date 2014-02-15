@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import bootcamp_1_1V.android.R;
-import bootcamp_1_1V.android.constants.Constants;
+import bootcamp_1_1V.android.services.ImageDownloader;
 
 import static bootcamp_1_1V.android.constants.Constants.*;
 
@@ -21,14 +21,14 @@ public class ProductDetailsActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		String title = extras.getString(TITLE_KEY);
 		String description = extras.getString(DESCRIPTION_KEY);
-		int drawableResourceId = extras.getInt(DRAWABLE_KEY);
+		String imageUrl = extras.getString(IMAGE_URL_KEY);
 		TextView imageTitle = (TextView) findViewById(R.id.product_title);
 		imageTitle.setText(title);
-		ImageView imageView = (ImageView) findViewById(R.id.product_image);
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), drawableResourceId);
+        ImageDownloader imageDownloader = new ImageDownloader();
+        Bitmap bitmap = imageDownloader.downloadImage(imageUrl);
+        ImageView imageView = (ImageView) findViewById(R.id.product_image);
         imageView.setImageBitmap(bitmap);
 		TextView issueDescription = (TextView) findViewById(R.id.product_description);
 		issueDescription.setText(description);
 	}
-
 }

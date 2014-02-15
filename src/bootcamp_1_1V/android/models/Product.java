@@ -2,14 +2,14 @@ package bootcamp_1_1V.android.models;
 
 public class Product {
 
-    private int drawable;
+    private final String image_url;
     private String title;
     private String description;
 
-    public Product(String title, String description, int drawable) {
+    public Product(String title, String description, String image_url) {
         this.title = title;
         this.description = description;
-        this.drawable = drawable;
+        this.image_url = image_url;
     }
 
     public String getDescription() {
@@ -20,8 +20,8 @@ public class Product {
         return title;
     }
 
-    public int getDrawable() {
-        return drawable;
+    public String getImageUrl() {
+        return image_url;
     }
 
     @Override
